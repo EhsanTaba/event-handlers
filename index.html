@@ -1,0 +1,113 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>events!</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			html {
+				font-size: 20px;
+				font-family: sans-serif;
+				height: 300vh;
+			}
+			button {
+				font-size: 1rem;
+				padding: 0.5rem;
+				border-radius: 0.25rem;
+				border: 1px solid #ccc;
+				background-color: #fff;
+				cursor: pointer;
+			}
+			select {
+				font-size: 1rem;
+				padding: 0.5rem;
+				border-radius: 0.25rem;
+				border: 1px solid #ccc;
+				background-color: #fff;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main id="scroll-position">
+			<div id="myElement">Hover over me</div>
+
+			<pre>
+      You HAVE to choose a different option than the default in the `select` to get the alert.
+    </pre
+			>
+			<select id="mySelect">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+			</select>
+			<button id="myButton">Double Click me</button>
+
+			<div id="content">
+				<p>Scroll down to see the effect.</p>
+				<p
+					>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+					volutpat ultricies ultricies. In rhoncus nunc non diam lacinia, et
+					gravida lectus faucibus. Vestibulum interdum semper quam, eget
+					tincidunt ligula. Mauris accumsan mi non finibus pulvinar. Proin ac
+					ante sit amet lorem congue consequat. Integer faucibus lorem non mi
+					volutpat, non malesuada tortor bibendum. Mauris efficitur ultricies
+					consectetur. Morbi facilisis feugiat metus ut rhoncus. Curabitur
+					malesuada leo ut orci hendrerit feugiat. Quisque sed orci ut mi
+					condimentum dictum nec non tortor. Sed sed mauris vulputate, efficitur
+					justo vel, aliquam mi. Fusce ac odio eget metus bibendum egestas ac id
+					quam.</p
+				>
+				<p
+					>Donec ut lacus vitae enim scelerisque bibendum. Proin feugiat leo ac
+					neque vestibulum scelerisque. Phasellus laoreet, mi sed tincidunt
+					aliquet, lorem elit pellentesque felis, eu cursus enim velit vitae
+					libero. Maecenas auctor, leo et consequat pharetra, elit felis
+					faucibus enim, vitae sagittis ipsum enim vitae erat. Donec ac varius
+					tortor. Fusce posuere lacus ut lacus scelerisque ullamcorper. Nulla
+					feugiat purus et dolor fringilla fringilla. Etiam ac sem odio. Vivamus
+					interdum sagittis est vel lobortis. Nam venenatis ante sapien, sed
+					scelerisque ligula eleifend sit amet. Vestibulum vitae eleifend felis.
+					Sed vitae gravida massa. Suspendisse aliquet fermentum dignissim.
+					Vestibulum dapibus neque vel volutpat posuere.</p
+				>
+			</div>
+		</main>
+	</body>
+	<script>
+		// Add an event listener to the select element
+		document.getElementById('mySelect').addEventListener('change', function () {
+			// Retrieve the selected option value
+			var selectedOption = this.value;
+
+			// Alert the selected option value
+			alert(selectedOption);
+
+			// Print the selected option to the console
+			console.log('Selected option: ' + selectedOption);
+		});
+
+		// Add an event listener to the button element with bubbling and double click
+		document
+			.getElementById('myButton')
+			.addEventListener('dblclick', function () {
+				// Display an alert when the button is double-clicked
+				alert('Button double-clicked!');
+			});
+
+		// Add a scroll event listener to the window object
+		window.addEventListener('scroll', function () {
+			console.log('SCROLL');
+			// Get the scroll position of the body
+			var scrollPosition =
+				window.pageYOffset || document.documentElement.scrollTop;
+
+			// Log the scroll position to the console
+			console.log('Scroll position: ' + scrollPosition);
+		});
+	</script>
+</html>
